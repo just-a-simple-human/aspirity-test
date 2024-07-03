@@ -2,32 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+body {
+  width: 100dvw;
+  height: 100vh;
+  overflow-x: hidden;
+  background: #141414;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  *:focus-visible {
+    outline: none;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+  .text-body-1 {
+    @apply text-base font-normal
+  }
+  .text-body-2 {
+    @apply text-sm font-normal
+  }
+  .text-button {
+    @apply text-sm font-semibold uppercase
+  }
+  .text-caption {
+    @apply text-xs font-normal
+  }
+  .text-custom-headline {
+    @apply text-5xl font-bold leading-[56px]
+  }
+  .text-subtitle-1 {
+    @apply text-base font-normal
+  }
+  .text-subtitle-2 {
+    @apply text-sm leading-6 font-medium
+  }
+  .text-title-3 {
+    @apply text-base font-medium
+  }
+  .text-h-5 {
+    @apply text-2xl font-normal
   }
 }
